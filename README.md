@@ -1,18 +1,18 @@
-# Clone the repository
+## Clone the repository
 ```
 git clone https://github.com/ay-amityadav/HiFiBGC_analyses
 ```
-# Download dataset
+## Download dataset
 Download [HiFiBGC_0.1.13_Run.tar.gz](https://zenodo.org/records/10874958/files/HiFiBGC_0.1.13_Run.tar.gz?download=1), uncompress it, and put it under folder `HiFiBGC_analyses`.
 
-# Setup conda environments
+## Setup conda environments
 ```
 conda env create --file envs/snakemake.yml
 
 conda env create --file envs/jupyterlab.yml
 ```
 
-# Run
+## Run
 
 ### Comparison between four methods
 Run 
