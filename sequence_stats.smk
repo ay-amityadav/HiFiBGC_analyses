@@ -59,6 +59,9 @@ rule get_statistics:
        n50_hifiasm_meta_assembly = df_hifiasm_meta_assembly_seqkit_stats['N50'].iloc[0]
        n50_metaflye_assembly = df_metaflye_assembly_seqkit_stats['N50'].iloc[0]
        n50_hicanu_assembly = df_hicanu_assembly_seqkit_stats['N50'].iloc[0]
+       sum_len_hifiasm_meta_assembly = df_hifiasm_meta_assembly_seqkit_stats['sum_len'].iloc[0]
+       sum_len_metaflye_assembly = df_metaflye_assembly_seqkit_stats['sum_len'].iloc[0]
+       sum_len_hicanu_assembly = df_hicanu_assembly_seqkit_stats['sum_len'].iloc[0]
 
        print(f"Stats for: {wildcards.env}")
        print(f"-----------------")
@@ -66,3 +69,6 @@ rule get_statistics:
        print(f"n50_hifiasm_meta_assembly: {n50_hifiasm_meta_assembly}")
        print(f"n50_metaflye_assembly: {n50_metaflye_assembly}")
        print(f"n50_hicanu_assembly: {n50_hicanu_assembly}")
+       print(f"sum_len_hifiasm_meta_assembly: {sum_len_hifiasm_meta_assembly}")
+       print(f"sum_len_metaflye_assembly: {sum_len_metaflye_assembly}")
+       print(f"sum_len_hicanu_assembly: {sum_len_hicanu_assembly}")
