@@ -71,3 +71,17 @@ conda activate snakemake
 snakemake -s sequence_stats.smk --use-conda --cores 8 -p
 ```
 
+### BGC database statistics
+Download [mibig_gbk_3.1.tar.gz](https://dl.secondarymetabolites.org/mibig/mibig_gbk_3.1.tar.gz), and uncompress it, and put it under folder `HiFiBGC_analyses`.
+
+Download [BiG-SLICE database](https://s3.ap-northeast-1.wasabisys.com/gigadb-datasets/live/pub/10.5524/100001_101000/100826/data/full_run_result.zip), and uncompress it, and put it under folder `HiFiBGC_analyses`.
+
+Run
+```
+conda activate jupyterlab
+
+jupyter lab
+```
+Thereafter, execute `BGC_databases.ipynb`
+
+
