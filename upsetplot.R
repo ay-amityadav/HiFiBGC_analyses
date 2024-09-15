@@ -48,7 +48,7 @@ upset(
             counts=TRUE,
             mapping=aes(fill=`Complete/Partial`),
             bar_number_threshold=1.00
-        )
+        ) + scale_fill_manual(values=c('Complete'='#f8766d', 'Partial'='#00c467')) 
     ),
     set_sizes=(
         upset_set_size()
@@ -73,7 +73,7 @@ upset(
             width=0.9,
             mapping=aes(fill=`Complete/Partial`),
             bar_number_threshold=1.00
-        )
+        ) + scale_fill_manual(values=c('Complete'='#f8766d', 'Partial'='#00c467')) 
     ),
     set_sizes=(
         upset_set_size()
@@ -95,7 +95,7 @@ upset(
             counts=TRUE,
             mapping=aes(fill=`Complete/Partial`),
             bar_number_threshold=1.00
-        )
+        ) + scale_fill_manual(values=c('Complete'='#f8766d', 'Partial'='#00c467')) 
     ),
     annotations=list(
         'clinker_lower_matrix_mean'=list(
@@ -123,7 +123,7 @@ upset(
             counts=TRUE,
             mapping=aes(fill=`Complete/Partial`),
             bar_number_threshold=1.00
-        )
+        ) + scale_fill_manual(values=c('Complete'='#f8766d', 'Partial'='#00c467')) 
     ),
     annotations = list(
         'BiG-Scape class'=(
@@ -146,4 +146,29 @@ upset(
     width_ratio=0.360,
  ) + patchwork::plot_layout(heights=c(0.76, 1.2, 0.5))
 dev.off()
+
+# Upsetplot with BiG-SCAPE classes only ('NRPS', 'PKS-NRP_Hybrids', 'PKSother', 'PKSI')
+# Subset df
+df <- df[df$`BiG-SCAPE Class` %in% c('NRPS', 'PKS-NRP_Hybrids', 'PKSother', 'PKSI'), ]
+output_file = paste(output_dir, "/", "upsetplot", "_", c_parameter, "_nrps_pks", ".pdf", sep='')
+pdf(output_file) 
+set_size(8, 3)
+upset(
+    df,
+    columns,
+    base_annotations=list(
+        'Intersection size'=intersection_size(
+            counts=TRUE,
+            mapping=aes(fill=`Complete/Partial`),
+            bar_number_threshold=1.00
+        ) + scale_fill_manual(values=c('Complete'='#f8766d', 'Partial'='#00c467')) 
+    ),
+    set_sizes=(
+        upset_set_size()
+        + theme(axis.ticks.x=element_line())
+    ),
+    width_ratio=0.360,
+ ) + patchwork::plot_layout(heights=c(1.2, 0.5))
+dev.off()
+
 

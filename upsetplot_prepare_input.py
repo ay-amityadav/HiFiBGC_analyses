@@ -69,6 +69,10 @@ def main():
     # Rename column name
     df_bigscape_upset.rename(columns = {'Contig_Edge':'Partial/Complete', 'BiG-SCAPE class':'BiGSCAPE_class'}, inplace = True) 
 
+    # Replace values in a column
+    mapping = {True: 'Partial', False: 'Complete'}
+    df_bigscape_upset['Partial/Complete'] = df_bigscape_upset['Partial/Complete'].map(mapping)
+
     # Write out to a file
     df_bigscape_upset.to_csv(f"{df_upsetplot}", sep='\t', index=False)
 

@@ -13,6 +13,7 @@ rule all:
         expand(f"{{env}}/upsetplot_{C_PARAMETER}_with_percentages.pdf", env=['sludge', 'human', 'sheep', 'chicken']),
         expand(f"{{env}}/upsetplot_{C_PARAMETER}_clinker_lower_matrix_mean.pdf", env=['sludge', 'human', 'sheep', 'chicken']),
         expand(f"{{env}}/upsetplot_{C_PARAMETER}_bigscape_class.pdf", env=['sludge', 'human', 'sheep', 'chicken']),
+        expand(f"{{env}}/upsetplot_{C_PARAMETER}_nrps_pks.pdf", env=['sludge', 'human', 'sheep', 'chicken']),
 
 rule upsetplot_prepare_input:
     input:
@@ -40,6 +41,7 @@ rule plot_upsetplot:
         f"{{env}}/upsetplot_{C_PARAMETER}_with_percentages.pdf",
         f"{{env}}/upsetplot_{C_PARAMETER}_clinker_lower_matrix_mean.pdf",
         f"{{env}}/upsetplot_{C_PARAMETER}_bigscape_class.pdf",
+        f"{{env}}/upsetplot_{C_PARAMETER}_nrps_pks.pdf",
     conda:
         "envs/r_complexupset.yml"
     shell:
