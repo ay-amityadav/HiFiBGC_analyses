@@ -3,7 +3,7 @@
 git clone https://github.com/ay-amityadav/HiFiBGC_analyses
 ```
 ## Download dataset
-Download [HiFiBGC_0.1.13_Run.tar.gz](https://zenodo.org/records/10874958/files/HiFiBGC_0.1.13_Run.tar.gz?download=1), uncompress it, and put it under folder `HiFiBGC_analyses`.
+Download `HiFiBGC_0.1.13_Run.tar.gz` from [figshare](https://doi.org/10.6084/m9.figshare.27194043.v3) or [zenodo](https://zenodo.org/records/10874958), uncompress it, and put it under folder `HiFiBGC_analyses`.
 
 ## Setup conda environments
 ```
